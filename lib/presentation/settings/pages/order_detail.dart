@@ -18,16 +18,16 @@ class OrderDetailPage extends StatelessWidget {
           title: Text('Order #${orderEntity.code}'),
         ),
         body: SingleChildScrollView(
-          padding:  EdgeInsets.symmetric(horizontal:16.w,vertical: 16.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _status(),
-               SizedBox(
+              SizedBox(
                 height: 50.h,
               ),
               _items(context),
-               SizedBox(
+              SizedBox(
                 height: 30.h,
               ),
               _shipping()
@@ -51,14 +51,14 @@ class OrderDetailPage extends StatelessWidget {
                     width: 30.w,
                     decoration: BoxDecoration(
                         color: orderEntity.orderStatus[index].done
-                            ? AppColors.primary
+                            ? EColors.primary
                             : Colors.white,
                         shape: BoxShape.circle),
                     child: orderEntity.orderStatus[index].done
                         ? const Icon(Icons.check)
                         : Container(),
                   ),
-                   SizedBox(
+                  SizedBox(
                     width: 15.w,
                   ),
                   Text(
@@ -87,7 +87,7 @@ class OrderDetailPage extends StatelessWidget {
             ],
           );
         },
-        separatorBuilder: (context, index) =>  SizedBox(
+        separatorBuilder: (context, index) => SizedBox(
               height: 50.h,
             ),
         reverse: true,
@@ -98,11 +98,11 @@ class OrderDetailPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         Text(
+        Text(
           'Order Items',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
         ),
-         SizedBox(
+        SizedBox(
           height: 15.h,
         ),
         GestureDetector(
@@ -112,9 +112,9 @@ class OrderDetailPage extends StatelessWidget {
           },
           child: Container(
             height: 70.h,
-            padding:  EdgeInsets.symmetric(horizontal: 16.sp),
+            padding: EdgeInsets.symmetric(horizontal: 16.sp),
             decoration: BoxDecoration(
-                color: AppColors.secondBackground,
+                color: EColors.secondBackground,
                 borderRadius: BorderRadius.circular(10.r)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,22 +122,22 @@ class OrderDetailPage extends StatelessWidget {
                 Row(
                   children: [
                     const Icon(Icons.receipt_rounded),
-                     SizedBox(
+                    SizedBox(
                       width: 20.w,
                     ),
                     Text(
                       '${orderEntity.products.length} Items',
-                      style:  TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.w400, fontSize: 16.sp),
                     )
                   ],
                 ),
-                 Text(
+                Text(
                   'View All',
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 14.sp,
-                      color: AppColors.primary),
+                      color: EColors.primary),
                 )
               ],
             ),
@@ -151,18 +151,18 @@ class OrderDetailPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         Text(
+        Text(
           'Shipping details',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
         ),
-         SizedBox(
+        SizedBox(
           height: 15.h,
         ),
         Container(
             width: double.infinity,
-            padding:  EdgeInsets.symmetric(horizontal:16.w,vertical: 16.h),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             decoration: BoxDecoration(
-                color: AppColors.secondBackground,
+                color: EColors.secondBackground,
                 borderRadius: BorderRadius.circular(10.r)),
             child: Text(orderEntity.shippingAddress))
       ],

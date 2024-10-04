@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/presentation/home/widgets/header.dart';
 import 'package:ecommerce_app/presentation/home/widgets/new_in.dart';
 import 'package:ecommerce_app/presentation/home/widgets/top_selling.dart';
@@ -17,14 +18,15 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             const Header(),
-            SizedBox(height: 24.h),
+            24.h.ph,
             const SearchField(),
-            SizedBox(height: 24.h),
+            24.h.ph,
             const Categories(),
-            SizedBox(height: 24.h),
+            24.h.ph,
             const TopSelling(),
-            SizedBox(height: 24.h),
-            const NewIn()
+            24.h.ph,
+            const NewIn(),
+            110.h.ph,
           ],
         ),
       ),

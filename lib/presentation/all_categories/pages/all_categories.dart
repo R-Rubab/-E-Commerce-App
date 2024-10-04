@@ -63,7 +63,7 @@ class AllCategoriesPage extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
                     decoration: BoxDecoration(
-                        color: AppColors.secondBackground,
+                        color: EColors.secondBackground,
                         borderRadius: BorderRadius.circular(8.r)),
                     child: Row(
                       children: [

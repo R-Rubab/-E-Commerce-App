@@ -1,6 +1,3 @@
-import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_app/core/configs/theme/app_theme.dart';
 import 'package:ecommerce_app/presentation/splash/bloc/splash_cubit.dart';
 import 'package:ecommerce_app/presentation/splash/pages/splash.dart';
@@ -18,11 +15,9 @@ Future<void> main() async {
     await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform);
     await initializeDependencies();
-    var snapshot =
-        await FirebaseFirestore.instance.collection('Products').get();
-    // print(snapshot.docs.map((e) => e.data()).toList()); // Print data here
-    log(snapshot.docs.map((e) => e.data()).toList().toString()); // Print data here
-
+    // var snapshot =
+    //     await FirebaseFirestore.instance.collection('Products').get();
+    // log(snapshot.docs.map((e) => e.data()).toList().toString()); // Print data here
   } catch (e) {
     print('Error during initialization: $e');
   }
@@ -32,21 +27,27 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SplashCubit()..appStarted(),
-      child: ScreenUtilInit(
-        // designSize: const Size(400, 875),
+    // log('Screen width: ${MediaQuery.of(context).size.width}');
+    // log('Screen height: ${MediaQuery.of(context).size.height}');
+    // print('Screen width: ${ScreenUtil().screenWidth}'); // Check screen width
+    // print('Screen height: ${ScreenUtil().screenHeight}'); // Check screen height
+    // print(
+    //     'Text scaling factor: ${ScreenUtil().scaleText}'); // Check text scaling
+
+    return ScreenUtilInit(
         designSize: const Size(392.72727272727275, 805.0909090909091),
         minTextAdapt: true,
         splitScreenMode: true,
-        child: MaterialApp(
-            theme: AppTheme.appTheme,
-            debugShowCheckedModeBanner: false,
-            home: const SplashPage()),
-      ),
-    );
+        builder: (context, child) {
+          return BlocProvider(
+            create: (context) => SplashCubit()..appStarted(),
+            child: MaterialApp(
+                theme: AppTheme.appTheme,
+                debugShowCheckedModeBanner: false,
+                home: const SplashPage()),
+          );
+        });
   }
 }

@@ -10,12 +10,12 @@ class NavBarData {
 
   static List<NavBarData> data = [
     NavBarData(
-      screen: const MyFavoritesPage(),
-      icon: AppVectors.heartW,
-    ),
-    NavBarData(
       screen: const HomePage(),
       icon: AppVectors.home,
+    ),
+    NavBarData(
+      screen: const MyFavoritesPage(),
+      icon: AppVectors.heartW,
     ),
     NavBarData(
       screen: const SettingsPage(),

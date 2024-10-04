@@ -28,7 +28,7 @@ class SelectedColor extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
         decoration: BoxDecoration(
-          color: AppColors.secondBackground,
+          color: EColors.secondBackground,
           borderRadius: BorderRadius.circular(100.r),
         ),
         child: Row(

@@ -25,10 +25,10 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
           .collection('Products')
           // .where('salesNumber', isGreaterThanOrEqualTo: 20)
           .get();
-      log('ProductFirebaseSErvice : $returnedData \n result ProductFirebaseSErvice: ${Right(returnedData.docs.map((e) => e.data()).toList())}');
+      // log('ProductFirebaseSErvice : $returnedData \n result ProductFirebaseSErvice: ${Right(returnedData.docs.map((e) => e.data()).toList())}');
       return Right(returnedData.docs.map((e) => e.data()).toList());
     } catch (e) {
-      log('ProductFirebaseService: $e ${const Left('Please try again')}');
+      // log('ProductFirebaseService: $e ${const Left('Please try again')}');
       return const Left('Please try again');
     }
   }

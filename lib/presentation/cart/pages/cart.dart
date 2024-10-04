@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/presentation/cart/bloc/cart_products_display_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -55,15 +56,13 @@ class CartPage extends StatelessWidget {
 
   Widget _products(List<ProductOrderedEntity> products) {
     return ListView.separated(
-        padding:  EdgeInsets.symmetric(horizontal:16.w,vertical: 16.h),
+        padding: 16.w.phv(16.h),
         itemBuilder: (context, index) {
           return ProductOrderedCard(
             productOrderedEntity: products[index],
           );
         },
-        separatorBuilder: (context, index) =>  SizedBox(
-              height: 10.h,
-            ),
+        separatorBuilder: (context, index) => 10.h.ph,
         itemCount: products.length);
   }
 
@@ -72,13 +71,11 @@ class CartPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SvgPicture.asset(AppVectors.cartBag),
-        SizedBox(
-          height: 20.h,
-        ),
+        20.h.ph,
         Text(
           "Cart is empty",
           textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.sp),
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25.sp),
         )
       ],
     );

@@ -11,12 +11,12 @@ class ProductRepositoryImpl extends ProductRepository {
   @override
   Future<Either> getTopSelling() async {
     var returnedData = await sl<ProductFirebaseService>().getTopSelling();
-    log("GetTopSelling repository: $returnedData");
+    // log("GetTopSelling repository: $returnedData");
     return returnedData.fold((error) {
-      log("Error getTopSelling repository: $error");
+      // log("Error getTopSelling repository: $error");
       return Left(error);
     }, (data) {
-      log("Data GetTopSelling repositoryImp==>: ${Right(List.from(data).map((e) => ProductModel.fromMap(e).toEntity()).toList())}");
+      // log("Data GetTopSelling repositoryImp==>: ${Right(List.from(data).map((e) => ProductModel.fromMap(e).toEntity()).toList())}");
       return Right(List.from(data)
           .map((e) => ProductModel.fromMap(e).toEntity())
           .toList());

@@ -102,8 +102,8 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
           decoration: BoxDecoration(
               color: context.read<GenderSelectionCubit>().selectedIndex ==
                       genderIndex
-                  ? AppColors.primary
-                  : AppColors.secondBackground,
+                  ? EColors.primary
+                  : EColors.secondBackground,
               borderRadius: BorderRadius.circular(30.r)),
           child: Center(
             child: Text(
@@ -141,7 +141,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
           height: 60.h,
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           decoration: BoxDecoration(
-              color: AppColors.secondBackground,
+              color: EColors.secondBackground,
               borderRadius: BorderRadius.circular(30.r)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,7 +155,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
   Widget _finishButton(BuildContext context) {
     return Container(
       height: 100.h,
-      color: AppColors.secondBackground,
+      color: EColors.secondBackground,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       child: Center(
         child: Builder(builder: (context) {

@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/common/bloc/categories/categories_display_cubit.dart';
 import 'package:ecommerce_app/common/helper/images/image_display.dart';
 import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/presentation/all_categories/pages/all_categories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,18 +40,14 @@ class Categories extends StatelessWidget {
 
   Widget _seaAll(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 16.w,
-      ),
+      padding:  16.w.hp,
+      
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'Categories',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16.sp,
-            ),
+            style: Theme.of(context).textTheme.displayMedium,
           ),
           GestureDetector(
             onTap: () {
@@ -59,7 +57,7 @@ class Categories extends StatelessWidget {
               'See All',
               style: TextStyle(
                 fontWeight: FontWeight.w400,
-                fontSize: 16.sp,
+                fontSize: 18.sp,
               ),
             ),
           )
@@ -73,16 +71,16 @@ class Categories extends StatelessWidget {
       height: 100.h,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: 16.sp),
+          padding: 16.w.hp,
           itemBuilder: (context, index) {
-            return Column( 
+            return Column(
               children: [
                 Container(
                   height: 60.h,
                   width: 60.w,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.white,
+                      color: EColors.white,
                       image: DecorationImage(
                           fit: BoxFit.fill,
                           image: NetworkImage(
@@ -90,7 +88,7 @@ class Categories extends StatelessWidget {
                                 categories[index].image),
                           ))),
                 ),
-                SizedBox(height: 10.h),
+                10.h.ph,
                 Text(
                   categories[index].title,
                   style:
@@ -99,7 +97,7 @@ class Categories extends StatelessWidget {
               ],
             );
           },
-          separatorBuilder: (context, index) => const SizedBox(width: 15),
+          separatorBuilder: (context, index) => 15.w.pw,
           itemCount: categories.length),
     );
   }

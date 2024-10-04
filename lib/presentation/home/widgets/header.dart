@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
-import 'package:ecommerce_app/core/configs/assets/app_images.dart';
 import 'package:ecommerce_app/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/domain/auth/entity/user.dart';
 import 'package:ecommerce_app/presentation/cart/pages/cart.dart';
 import 'package:ecommerce_app/presentation/home/bloc/user_info_display_cubit.dart';
@@ -21,53 +21,45 @@ class Header extends StatelessWidget {
     return BlocProvider(
       create: (context) => UserInfoDisplayCubit()..displayUserInfo(),
       child: Padding(
-        padding:  EdgeInsets.only(
-            top: 40.h,
-            right: 16.w,
-            left: 16.w
-          ),
-          child: BlocBuilder < UserInfoDisplayCubit, UserInfoDisplayState > (
-            builder: (context, state) {
-              if (state is UserInfoLoading) {
-                return const Center(child: CircularProgressIndicator());
-              }
-              if (state is UserInfoLoaded) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _profileImage(state.user,context),
-                    _gender(state.user),
-                    _card(context)
-                  ],
-                );
-              }
-              return Container();
-            },
-          ),
+        padding: EdgeInsets.only(top: 40.h, right: 16.w, left: 16.w),
+        child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
+          builder: (context, state) {
+            if (state is UserInfoLoading) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            if (state is UserInfoLoaded) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _profileImage(state.user, context),
+                  _gender(state.user),
+                  _card(context)
+                ],
+              );
+            }
+            return Container();
+          },
+        ),
       ),
     );
   }
 
-  Widget _profileImage(UserEntity user,BuildContext context) {
+  Widget _profileImage(UserEntity user, BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         AppNavigator.push(context, const SettingsPage());
       },
       child: Container(
-        height: 40.h,
-        width: 40.w,
+        height: 43.h,
+        width: 90.w,
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: user.image.isEmpty ? 
-            const AssetImage(
-              AppImages.profile
-            ) : NetworkImage(
-              user.image
-            )
-          ),
-          color: Colors.red,
-          shape: BoxShape.circle
-        ),
+            image: DecorationImage(
+                image: user.image.isEmpty
+                    ? AssetImage(AppVectors.profile)
+                    : NetworkImage(user.image),
+                fit: BoxFit.cover),
+            color: EColors.secondBackground,
+            shape: BoxShape.circle),
       ),
     );
   }
@@ -75,20 +67,14 @@ class Header extends StatelessWidget {
   Widget _gender(UserEntity user) {
     return Container(
       height: 40.h,
-      padding:  EdgeInsets.symmetric(
-        horizontal: 16.w
-      ),
+      padding: 16.w.hp,
       decoration: BoxDecoration(
-        color: AppColors.secondBackground,
-        borderRadius: BorderRadius.circular(100)
-      ),
+          color: EColors.secondBackground,
+          borderRadius: BorderRadius.circular(100)),
       child: Center(
         child: Text(
-          user.gender == 1 ? 'Men' : 'Women',
-          style:  TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 16.sp
-          ),
+          user.gender == 1 ? 'BOYS' : 'GIRLS',
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.sp),
         ),
       ),
     );
@@ -96,15 +82,15 @@ class Header extends StatelessWidget {
 
   Widget _card(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        AppNavigator.push(context,const CartPage());
+      onTap: () {
+        AppNavigator.push(context, const CartPage());
       },
       child: Container(
-        height: 40.h,
-        width: 40.w,
+        height: 45.h,
+        width: 45.w,
         decoration: const BoxDecoration(
-          color: AppColors.primary,
-          shape: BoxShape.circle
+          color: EColors.primary,
+          shape: BoxShape.circle,
         ),
         child: SvgPicture.asset(
           AppVectors.bag,

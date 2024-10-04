@@ -56,9 +56,9 @@ class MyOrdersPage extends StatelessWidget {
             },
             child: Container(
               height: 70.h,
-              padding:  EdgeInsets.symmetric(horizontal: 16.w),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               decoration: BoxDecoration(
-                  color: AppColors.secondBackground,
+                  color: EColors.secondBackground,
                   borderRadius: BorderRadius.circular(10.r)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,7 +66,7 @@ class MyOrdersPage extends StatelessWidget {
                   Row(
                     children: [
                       const Icon(Icons.receipt_rounded),
-                       SizedBox(
+                      SizedBox(
                         width: 20.w,
                       ),
                       Column(
@@ -75,12 +75,12 @@ class MyOrdersPage extends StatelessWidget {
                         children: [
                           Text(
                             'Order #${orders[index].code}',
-                            style:  TextStyle(
+                            style: TextStyle(
                                 fontWeight: FontWeight.w400, fontSize: 16.sp),
                           ),
                           Text(
                             '${orders[index].products.length} item',
-                            style:  TextStyle(
+                            style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12.sp,
                                 color: Colors.grey),
@@ -95,7 +95,7 @@ class MyOrdersPage extends StatelessWidget {
             ),
           );
         },
-        separatorBuilder: (context, index) =>  SizedBox(
+        separatorBuilder: (context, index) => SizedBox(
               height: 20.h,
             ),
         itemCount: orders.length);

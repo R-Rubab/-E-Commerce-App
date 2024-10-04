@@ -26,16 +26,16 @@ class SelectedSize extends StatelessWidget {
       },
       child: Container(
         height: 60.h,
-        margin:  EdgeInsets.symmetric(horizontal:16.w,vertical: 16.h),
-        padding: EdgeInsets.symmetric(horizontal:12.w,vertical: 12.h),
+        margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
         decoration: BoxDecoration(
-          color: AppColors.secondBackground,
+          color: EColors.secondBackground,
           borderRadius: BorderRadius.circular(100.r),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-             Text(
+            Text(
               'Size',
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
             ),
@@ -44,11 +44,11 @@ class SelectedSize extends StatelessWidget {
                 BlocBuilder<ProductSizeSelectionCubit, int>(
                   builder: (context, state) => Text(
                     productEntity.sizes[state],
-                    style:  TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18.sp),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),
                   ),
                 ),
-                 SizedBox(
+                SizedBox(
                   width: 15.w,
                 ),
                 const Icon(

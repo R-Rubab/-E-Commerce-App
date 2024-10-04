@@ -1,8 +1,10 @@
+import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/domain/product/usecases/get_favorties_products.dart';
+import 'package:ecommerce_app/presentation/navigation_bar/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/bloc/product/products_display_cubit.dart';
 import '../../../common/bloc/product/products_display_state.dart';
@@ -16,8 +18,11 @@ class MyFavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(
-        title: Text('My Favorites'),
+      appBar: BasicAppBar(
+        title: const Text('My Favorites'),
+        onTap: () {
+          AppNavigator.push(context, const NavigationPage());
+        },
       ),
       body: BlocProvider(
           create: (context) =>
@@ -47,19 +52,17 @@ class MyFavoritesPage extends StatelessWidget {
   }
 
   Widget _products(List<ProductEntity> products) {
-    return Expanded(
-      child: GridView.builder(
-        itemCount: products.length,
-        padding: EdgeInsets.all(16.h),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 0.6),
-        itemBuilder: (BuildContext context, int index) {
-          return ProductCard(productEntity: products[index]);
-        },
-      ),
+    return GridView.builder(
+      itemCount: products.length,
+      padding: 16.p,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: 0.8),
+      itemBuilder: (BuildContext context, int index) {
+        return ProductCard(productEntity: products[index]);
+      },
     );
   }
 }

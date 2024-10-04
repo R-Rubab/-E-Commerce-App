@@ -20,7 +20,7 @@ class MySettingTile extends StatelessWidget {
         height: 70.h,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
-            color: AppColors.secondBackground,
+            color: EColors.secondBackground,
             borderRadius: BorderRadius.circular(10.r)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/common/bloc/button/button_state_cubit.dart';
 import 'package:ecommerce_app/common/helper/cart/cart.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_reactive_button.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/data/order/models/order_registration_req.dart';
 import 'package:ecommerce_app/domain/order/usecases/order_registration.dart';
 import 'package:ecommerce_app/presentation/cart/pages/order_placed.dart';
@@ -41,7 +42,7 @@ class CheckOutPage extends StatelessWidget {
             }
           },
           child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal:16.w,vertical: 16.h),
+            padding: 16.w.phv(33.h),
             child: Builder(builder: (context) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,18 +50,19 @@ class CheckOutPage extends StatelessWidget {
                   _addressField(context),
                   BasicReactiveButton(
                       content: Container(
-                        padding:  EdgeInsets.symmetric(horizontal:8.w,vertical: 8.h),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 8.w, vertical: 8.h),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               '\$${CartHelper.calculateCartSubtotal(products)}',
-                              style:  TextStyle(
+                              style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16.sp),
                             ),
-                             Text(
+                            Text(
                               'Place Order',
                               style: TextStyle(
                                   color: Colors.white,

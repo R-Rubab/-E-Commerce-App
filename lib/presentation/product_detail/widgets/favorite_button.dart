@@ -8,10 +8,7 @@ import '../../../core/configs/theme/app_colors.dart';
 
 class FavoriteButton extends StatelessWidget {
   final ProductEntity productEntity;
-  const FavoriteButton({
-    required this.productEntity,
-    super.key
-    });
+  const FavoriteButton({required this.productEntity, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +20,13 @@ class FavoriteButton extends StatelessWidget {
         height: 40.h,
         width: 40.w,
         decoration: const BoxDecoration(
-            color: AppColors.secondBackground,
-            shape: BoxShape.circle
-          ),
-          child: BlocBuilder<FavoriteIconCubit,bool>(
-            builder: (context,state) => Icon(
-             state ? Icons.favorite : Icons.favorite_outline,
+            color: EColors.secondBackground, shape: BoxShape.circle),
+        child: BlocBuilder<FavoriteIconCubit, bool>(
+          builder: (context, state) => Icon(
+              state ? Icons.favorite : Icons.favorite_outline,
               size: 15.w,
-              color: Colors.white
-            ),
-          ),
+              color: Colors.white),
+        ),
       ),
     );
   }

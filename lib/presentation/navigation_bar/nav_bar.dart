@@ -5,14 +5,14 @@ import 'package:ecommerce_app/presentation/navigation_bar/nav_bar_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class NavigationView extends StatefulWidget {
-  const NavigationView({super.key});
+class NavigationPage extends StatefulWidget {
+  const NavigationPage({super.key});
 
   @override
-  State<NavigationView> createState() => _NavigationViewState();
+  State<NavigationPage> createState() => _NavigationPageState();
 }
 
-class _NavigationViewState extends State<NavigationView> {
+class _NavigationPageState extends State<NavigationPage> {
   int i = 0;
   final List<NavBarData> data = NavBarData.data;
   final navigationKey = GlobalKey<CurvedNavigationBarState>();

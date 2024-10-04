@@ -18,7 +18,7 @@ class AppTheme {
           // fontWeight: FontWeight.bold,
         ),
         bodyMedium: GoogleFonts.gelasio(
-          color: EColors.black,
+          color: EColors.white,
           fontSize: 20.sp,
           letterSpacing: .4,
           // fontWeight: FontWeight.bold,

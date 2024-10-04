@@ -15,7 +15,7 @@ class ProductColors extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 2,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       decoration: BoxDecoration(
-          color: AppColors.background,
+          color: EColors.background,
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(16.r), topLeft: Radius.circular(16.r))),
       child: Column(
@@ -64,8 +64,8 @@ class ProductColors extends StatelessWidget {
                             horizontal: 16.w, vertical: 16.h),
                         decoration: BoxDecoration(
                             color: state == index
-                                ? AppColors.primary
-                                : AppColors.secondBackground,
+                                ? EColors.primary
+                                : EColors.secondBackground,
                             borderRadius: BorderRadius.circular(50.r)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

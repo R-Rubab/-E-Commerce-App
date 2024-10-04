@@ -36,24 +36,7 @@ class ProductModel {
       required this.title});
 
   factory ProductModel.fromMap(Map<String, dynamic> map) {
-    log('Map Map MAp: $map \n ProductModel: ${ProductModel(
-      categoryId: map['categoryId'] as String,
-      colors: List<ProductColorModel>.from(
-          map['colors'].map((e) => ProductColorModel.fromMap(e))),
-      createdDate: map['createdDate'] as Timestamp,
-      discountedPrice: map['discountedPrice'] as num,
-      gender: map['gender'] as int,
-      images: List<String>.from(
-        map['images'].map((e) => e.toString()),
-      ),
-      price: map['price'] as num,
-      sizes: List<String>.from(
-        map['sizes'].map((e) => e.toString()),
-      ),
-      productId: map['productId'] as String,
-      salesNumber: map['salesNumber'] as int,
-      title: map['title'] as String,
-    )}');
+    log('Map Map MAp: $map \n ProductModel:');
     return ProductModel(
       categoryId: map['categoryId'] as String,
       colors: map['colors'] != null
