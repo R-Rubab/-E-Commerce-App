@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppNavigator {
   static pageRouteBuilder(BuildContext context, Widget widget) {
     return PageRouteBuilder(
-      transitionDuration: const Duration(milliseconds: 1000),
+      transitionDuration: const Duration(milliseconds: 700),
       pageBuilder: (context, animation, secondaryAnimation) {
         return widget;
       },

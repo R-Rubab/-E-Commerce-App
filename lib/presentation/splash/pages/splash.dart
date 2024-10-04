@@ -2,7 +2,7 @@ import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_app/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_app/presentation/auth/pages/siginin.dart';
-import 'package:ecommerce_app/presentation/home/pages/home.dart';
+import 'package:ecommerce_app/presentation/navigation_bar/nav_bar.dart';
 import 'package:ecommerce_app/presentation/splash/bloc/splash_cubit.dart';
 import 'package:ecommerce_app/presentation/splash/bloc/splash_state.dart';
 import 'package:flutter/material.dart';
@@ -20,11 +20,12 @@ class SplashPage extends StatelessWidget {
           AppNavigator.pushReplacement(context, SignInPage());
         }
         if (state is Authenticated) {
-          AppNavigator.pushReplacement(context, const HomePage());
+          AppNavigator.pushReplacement(context, const NavigationView());
+          // AppNavigator.pushReplacement(context, const HomePage());
         }
       },
       child: Scaffold(
-        backgroundColor: AppColors.primary,
+        backgroundColor: EColors.primary,
         body: Center(
           child: SvgPicture.asset(AppVectors.appLogo),
         ),
