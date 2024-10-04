@@ -1,20 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
 class AppTheme {
   static final appTheme = ThemeData(
-      primaryColor: AppColors.primary,
-      scaffoldBackgroundColor: AppColors.background,
+      primaryColor: EColors.primary,
+      scaffoldBackgroundColor: EColors.background,
       brightness: Brightness.dark,
       fontFamily: 'CircularStd',
+      textTheme: TextTheme(
+        bodyLarge: GoogleFonts.gelasio(
+          color: Colors.white,
+          fontSize: 20.sp,
+          letterSpacing: .8,
+          // fontWeight: FontWeight.bold,
+        ),
+        bodyMedium: GoogleFonts.gelasio(
+          color: EColors.black,
+          fontSize: 20.sp,
+          letterSpacing: .4,
+          // fontWeight: FontWeight.bold,
+        ),
+        displayMedium: GoogleFonts.gelasio(
+          color: EColors.white,
+          fontSize: 23.sp,
+          letterSpacing: .8,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       snackBarTheme: const SnackBarThemeData(
-        backgroundColor: AppColors.background,
+        backgroundColor: EColors.background,
         contentTextStyle: TextStyle(color: Colors.white),
       ),
       inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: AppColors.secondBackground,
+          fillColor: EColors.secondBackground,
           hintStyle: const TextStyle(
             color: Color(0xffA7A7A7),
             fontWeight: FontWeight.w400,
@@ -29,7 +51,7 @@ class AppTheme {
               borderSide: BorderSide.none)),
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
+              backgroundColor: EColors.primary,
               elevation: 0,
               textStyle:
                   const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
