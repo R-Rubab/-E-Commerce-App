@@ -1,5 +1,7 @@
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BasicAppButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -20,16 +22,14 @@ class BasicAppButton extends StatelessWidget {
     return ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          elevation: 10,
-          shadowColor: const Color.fromARGB(255, 235, 52, 174),
-          minimumSize:
-              Size(width ?? MediaQuery.of(context).size.width, height ?? 50),
+          elevation: 6,
+          shadowColor: EColors.grey,
+          minimumSize: Size(width ?? 1.sw, height ?? 50.h),
         ),
         child: content ??
             Text(
               title,
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w400),
+              style: Theme.of(context).textTheme.displaySmall,
             ));
   }
 }

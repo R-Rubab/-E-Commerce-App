@@ -3,6 +3,7 @@ import 'package:ecommerce_app/common/bloc/categories/categories_display_state.da
 import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/presentation/category_products/pages/category_products.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +19,7 @@ class AllCategoriesPage extends StatelessWidget {
     return Scaffold(
       appBar: BasicAppBar(
         hideBack: false,
-        title: _shopByCategories(),
+        title: _shopByCategories(context),
       ),
       body: BlocProvider(
         create: (context) => CategoriesDisplayCubit()..displayCategories(),
@@ -33,10 +34,10 @@ class AllCategoriesPage extends StatelessWidget {
     );
   }
 
-  Widget _shopByCategories() {
+  Widget _shopByCategories(BuildContext context) {
     return Text(
       'Shop by Categories',
-      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.sp),
+      style: Theme.of(context).textTheme.displayMedium,
     );
   }
 
@@ -60,8 +61,7 @@ class AllCategoriesPage extends StatelessWidget {
                   },
                   child: Container(
                     height: 70.h,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+                    padding: 12.p,
                     decoration: BoxDecoration(
                         color: EColors.secondBackground,
                         borderRadius: BorderRadius.circular(8.r)),
@@ -78,18 +78,17 @@ class AllCategoriesPage extends StatelessWidget {
                                       .generateCategoryImageURL(
                                           state.categories[index].image)))),
                         ),
-                        SizedBox(width: 15.w),
+                        15.w.pw,
                         Text(
                           state.categories[index].title,
-                          style: TextStyle(
-                              fontSize: 16.sp, fontWeight: FontWeight.w400),
+                          style: Theme.of(context).textTheme.bodyMedium,
                         )
                       ],
                     ),
                   ),
                 );
               },
-              separatorBuilder: (context, index) => SizedBox(height: 10.h),
+              separatorBuilder: (context, index) => 10.h.ph,
               itemCount: state.categories.length);
         }
         return Container();

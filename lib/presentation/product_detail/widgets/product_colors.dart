@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/domain/product/entities/product.dart';
 import 'package:ecommerce_app/presentation/product_detail/bloc/product_color_selection_cubit.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class ProductColors extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height / 2,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      padding:16.w.phv(16.h),
       decoration: BoxDecoration(
           color: EColors.background,
           borderRadius: BorderRadius.only(
@@ -45,7 +46,7 @@ class ProductColors extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20.h),
+         20.h.ph,
           Expanded(
             child: ListView.separated(
                 shrinkWrap: true,
@@ -60,8 +61,7 @@ class ProductColors extends StatelessWidget {
                       },
                       child: Container(
                         height: 60.h,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 16.w, vertical: 16.h),
+                        padding: 16.w.phv(16.h),
                         decoration: BoxDecoration(
                             color: state == index
                                 ? EColors.primary
@@ -89,7 +89,7 @@ class ProductColors extends StatelessWidget {
                                     shape: BoxShape.circle,
                                   ),
                                 ),
-                                SizedBox(width: 15.w),
+                              15.w.pw,
                                 state == index
                                     ? const Icon(
                                         Icons.check,
@@ -106,7 +106,7 @@ class ProductColors extends StatelessWidget {
                     ),
                   );
                 },
-                separatorBuilder: (context, index) => SizedBox(height: 20.h),
+                separatorBuilder: (context, index) =>  20.h.ph,
                 itemCount: productEntity.colors.length),
           ),
         ],

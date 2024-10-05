@@ -51,7 +51,7 @@ class Header extends StatelessWidget {
       },
       child: Container(
         height: 43.h,
-        width: 90.w,
+        width: 70.w,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: user.image.isEmpty
@@ -73,7 +73,7 @@ class Header extends StatelessWidget {
           borderRadius: BorderRadius.circular(100)),
       child: Center(
         child: Text(
-          user.gender == 1 ? 'BOYS' : 'GIRLS',
+          user.gender == 1 ? 'BOYS STUFF' : 'GIRLS CREATURE',
           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.sp),
         ),
       ),
@@ -89,8 +89,20 @@ class Header extends StatelessWidget {
         height: 45.h,
         width: 45.w,
         decoration: const BoxDecoration(
-          color: EColors.primary,
+          color: EColors.background,
           shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 76, 96, 81),
+              offset: Offset(4, 4),
+              blurRadius: 15,
+            ),
+            BoxShadow(
+              color: Color.fromARGB(255, 71, 91, 74),
+              offset: Offset(-4, -4),
+              blurRadius: 10,
+            ),
+          ],
         ),
         child: SvgPicture.asset(
           AppVectors.bag,

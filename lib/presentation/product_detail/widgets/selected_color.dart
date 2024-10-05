@@ -34,26 +34,32 @@ class SelectedColor extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Color',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+            Flexible(
+              child: Text(
+                'Color',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
             ),
             Row(
               children: [
                 BlocBuilder<ProductColorSelectionCubit, int>(
-                  builder: (context, state) => Container(
+                    builder: (context, state) {
+                  return Container(
                     height: 20.h,
                     width: 20.w,
                     decoration: BoxDecoration(
-                      color: Color.fromRGBO(
-                          productEntity.colors[state].hexCode[0],
-                          productEntity.colors[state].hexCode[1],
-                          productEntity.colors[state].hexCode[2],
-                          1),
+                      border: Border.all(width: 1, color: EColors.white),
+                      color: productEntity.colors.isNotEmpty
+                          ? Color.fromRGBO(
+                              productEntity.colors[state].hexCode[0],
+                              productEntity.colors[state].hexCode[1],
+                              productEntity.colors[state].hexCode[2],
+                              1)
+                          : EColors.grey,
                       shape: BoxShape.circle,
                     ),
-                  ),
-                ),
+                  );
+                }),
                 SizedBox(
                   width: 15.w,
                 ),

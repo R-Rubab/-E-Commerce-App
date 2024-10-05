@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/common/bloc/button/button_state_cubit.dart';
-import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/domain/product/entities/product.dart';
 import 'package:ecommerce_app/presentation/product_detail/bloc/favorite_icon_cubit.dart';
 import 'package:ecommerce_app/presentation/product_detail/bloc/product_color_selection_cubit.dart';
@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../widgets/favorite_button.dart';
 import '../widgets/product_images.dart';
 import '../widgets/product_price.dart';
 import '../widgets/product_quantity.dart';
@@ -35,12 +34,13 @@ class ProductDetailPage extends StatelessWidget {
                 FavoriteIconCubit()..isFavorite(productEntity.productId))
       ],
       child: Scaffold(
-        appBar: BasicAppBar(
-          hideBack: false,
-          action: FavoriteButton(
-            productEntity: productEntity,
-          ),
-        ),
+        // appBar: BasicAppBar(
+        //   height: 60.h,
+        //   hideBack: false,
+        //   action: FavoriteButton(
+        //     productEntity: productEntity,
+        //   ),
+        // ),
         bottomNavigationBar: AddToBag(
           productEntity: productEntity,
         ),
@@ -51,33 +51,22 @@ class ProductDetailPage extends StatelessWidget {
               ProductImages(
                 productEntity: productEntity,
               ),
-               SizedBox(
-                height: 10.h,
-              ),
+              10.h.ph,
               ProductTitle(
                 productEntity: productEntity,
-              ),
-              SizedBox(
-                height: 10.h,
               ),
               ProductPrice(
                 productEntity: productEntity,
               ),
-              SizedBox(
-                height: 20.h,
-              ),
+              15.h.ph,
               SelectedSize(
                 productEntity: productEntity,
               ),
-              SizedBox(
-                height: 15.h,
-              ),
+              5.h.ph,
               SelectedColor(
                 productEntity: productEntity,
               ),
-              SizedBox(
-                height: 15.h,
-              ),
+              5.h.ph,
               ProductQuantity(
                 productEntity: productEntity,
               ),

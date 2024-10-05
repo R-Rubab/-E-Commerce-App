@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/presentation/cart/bloc/cart_products_display_cubit.dart';
+import 'package:ecommerce_app/presentation/navigation_bar/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,8 +19,23 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(
-        title: Text('Cart'),
+      appBar: BasicAppBar(
+        title: Text(
+          'Cart',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
+        onTap: () {
+          if (Navigator.canPop(context)) {
+            Navigator.pop(context);
+          } else {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const NavigationPage(),
+              ),
+            );
+          }
+        },
       ),
       body: BlocProvider(
         create: (context) => CartProductsDisplayCubit()..displayCartProducts(),
@@ -34,8 +50,10 @@ class CartPage extends StatelessWidget {
                   : Stack(
                       children: [
                         _products(state.products),
-                        Align(
-                            alignment: Alignment.bottomCenter,
+                        Positioned(
+                            bottom: 100.h,
+                            left: 0,
+                            right: 0,
                             child: Checkout(
                               products: state.products,
                             ))

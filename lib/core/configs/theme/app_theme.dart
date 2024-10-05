@@ -29,6 +29,12 @@ class AppTheme {
           letterSpacing: .8,
           fontWeight: FontWeight.bold,
         ),
+        displaySmall: GoogleFonts.gelasio(
+          color: EColors.black,
+          fontSize: 20.sp,
+          letterSpacing: .4,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       snackBarTheme: const SnackBarThemeData(
         backgroundColor: EColors.background,

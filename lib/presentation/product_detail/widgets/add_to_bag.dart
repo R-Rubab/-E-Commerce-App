@@ -3,6 +3,7 @@ import 'package:ecommerce_app/common/bloc/button/button_state_cubit.dart';
 import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_app/common/helper/product/product_price.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_reactive_button.dart';
+import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_app/data/order/models/add_to_cart_req.dart';
 import 'package:ecommerce_app/domain/order/usecases/add_to_cart.dart';
 import 'package:ecommerce_app/domain/product/entities/product.dart';
@@ -34,7 +35,7 @@ class AddToBag extends StatelessWidget {
         }
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal:16.w,vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         child: BasicReactiveButton(
             onPressed: () {
               context.read<ButtonStateCubit>().execute(
@@ -69,19 +70,19 @@ class AddToBag extends StatelessWidget {
                             state;
                     return Text(
                       "\$${price.toString()}",
-                      style:  TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 14.sp),
+                      style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(color: EColors.black,fontWeight: FontWeight.bold),
+                
                     );
                   },
                 ),
-                 Text(
+                Text(
                   'Add to Bag',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                      fontSize: 14.sp),
+                  style: Theme.of(context)
+                      .textTheme
+                      .displaySmall,
                 ),
               ],
             )),

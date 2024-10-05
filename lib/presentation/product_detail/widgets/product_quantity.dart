@@ -24,7 +24,7 @@ class ProductQuantity extends StatelessWidget {
         children: [
           Text(
             'Quantity',
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           Row(
             children: [

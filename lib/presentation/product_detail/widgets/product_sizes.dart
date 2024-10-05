@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/domain/product/entities/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +31,7 @@ class ProductSizes extends StatelessWidget {
                   child: Text(
                     'Size',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
+                      Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
                 Align(
@@ -44,7 +45,7 @@ class ProductSizes extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20.h),
+           20.h.ph,
           Expanded(
             child: ListView.separated(
                 shrinkWrap: true,
@@ -59,8 +60,7 @@ class ProductSizes extends StatelessWidget {
                       },
                       child: Container(
                         height: 60.h,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 16.w, vertical: 16.h),
+                        padding: 16.w.phv(16.h),
                         decoration: BoxDecoration(
                             color: state == index
                                 ? EColors.primary

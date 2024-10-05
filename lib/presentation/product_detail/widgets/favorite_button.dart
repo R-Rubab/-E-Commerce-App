@@ -19,13 +19,23 @@ class FavoriteButton extends StatelessWidget {
       icon: Container(
         height: 40.h,
         width: 40.w,
-        decoration: const BoxDecoration(
-            color: EColors.secondBackground, shape: BoxShape.circle),
+        decoration: const BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(255, 76, 96, 81),
+            offset: Offset(4, 4),
+            blurRadius: 15,
+          ),
+          BoxShadow(
+            color: Color.fromARGB(255, 71, 91, 74),
+            offset: Offset(-4, -4),
+            blurRadius: 10,
+          ),
+        ], color: EColors.secondBackground, shape: BoxShape.circle),
         child: BlocBuilder<FavoriteIconCubit, bool>(
-          builder: (context, state) => Icon(
-              state ? Icons.favorite : Icons.favorite_outline,
-              size: 15.w,
-              color: Colors.white),
+          builder: (context, state) => Center(
+            child: Icon(state ? Icons.favorite : Icons.favorite_outline,
+                size: 25.w, color: Colors.white),
+          ),
         ),
       ),
     );

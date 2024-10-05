@@ -37,7 +37,7 @@ class SelectedSize extends StatelessWidget {
           children: [
             Text(
               'Size',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             Row(
               children: [

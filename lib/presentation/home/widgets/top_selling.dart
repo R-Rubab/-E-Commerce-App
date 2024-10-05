@@ -52,6 +52,7 @@ class TopSelling extends StatelessWidget {
       height: 210.h,
       width: 1.sw,
       child: ListView.separated(
+          physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
           padding: 16.w.hp,
           scrollDirection: Axis.horizontal,

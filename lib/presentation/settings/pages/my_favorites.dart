@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/domain/product/usecases/get_favorties_products.dart';
@@ -13,7 +12,9 @@ import '../../../domain/product/entities/product.dart';
 import '../../../service_locator.dart';
 
 class MyFavoritesPage extends StatelessWidget {
-  const MyFavoritesPage({super.key});
+  const MyFavoritesPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,14 @@ class MyFavoritesPage extends StatelessWidget {
       appBar: BasicAppBar(
         title: const Text('My Favorites'),
         onTap: () {
-          AppNavigator.push(context, const NavigationPage());
+          if (Navigator.canPop(context)) {
+            Navigator.pop(context);
+          } else {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const NavigationPage()),
+            );
+          }
         },
       ),
       body: BlocProvider(
