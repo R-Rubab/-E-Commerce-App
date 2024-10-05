@@ -8,21 +8,22 @@
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
-2. [Technologies Used](#technologies-used)
-3. [Project Structure](#project-structure)
-4. [Design Decisions](#design-decisions)
-5. [State Management (Bloc)](#state-management-bloc)
-6. [Firebase Integration](#firebase-integration)
+2. [User Interface Layout](#user-interface-layout)
+3. [Technologies Used](#technologies-used)
+4. [Project Structure](#project-structure)
+5. [Design Decisions](#design-decisions)
+6. [State Management (Bloc)](#state-management-bloc)
+7. [Firebase Integration](#firebase-integration)
    - [Authentication](#authentication)
    - [Firestore](#firestore)
    - [Storage](#storage)
-7. [How to Run the App](#how-to-run-the-app)
-8. [Advanced Features](#advanced-features)
-9. [Conclusion](#conclusion)
+8. [How to Run the App](#how-to-run-the-app)
+9. [Advanced Features](#advanced-features)
+10. [Conclusion](#conclusion)
 
 ## Project Overview
 
-The E-Commerce application allows users to browse products, add items to a cart, and proceed to checkout. It integrates Firebase services for authentication, data storage, and product management. The app is built using Flutter for the frontend, Firebase for backend services, Bloc for state management, and Clean Architecture principles.
+The E-Commerce application allows users to browse products, add items to a cart, and proceed to checkout. It integrates Firebase services for authentication, data storage, and product management. The app uses Flutter for the frontend, Firebase for backend services, Bloc for state management, and Clean Architecture principles.
 
 ## Technologies Used
 
@@ -33,6 +34,46 @@ The E-Commerce application allows users to browse products, add items to a cart,
   - Storage: To store images of products.
 - **Bloc**: For handling the app's state.
 - **Clean Architecture**: For structuring the code into layers and ensuring scalability.
+
+## User Interface Layout:
+Below is the UI implementation for E-Commerce:
+<table>
+    <tbody>
+        <tr>
+			<th>E-Commerce Application Using Flutter</th>	
+		</tr>
+        <tr>
+			<td>
+				<img width="280" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/1.png">
+				<img width="280" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/2.png">
+				<img width="280" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/3.png">
+				<img width="230" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/4.png">
+				<img width="230" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/5.png">
+			</td>
+		</tr>
+        <tr>
+			<td align="center">
+				<a href="https://github.com/R-Rubab/-E-Commerce-App">
+					<img src="https://github-readme-stats.vercel.app/api/pin/?username=R-Rubab&repo=-E-Commerce-App&theme=dracula" alt="Storage" />
+				</a>
+			</td>
+		</tr>
+    </tbody>
+</table>
+
+## Packaged
+```
+  1. firebase_auth
+  2. firebase_core
+  3. cloud_firestore
+  4. flutter_svg
+  5. flutter_bloc
+  6. dartz
+  7. get_it
+  8. flutter_screenutil
+  9. google_fonts
+  10. curved_navigation_bar
+```
 
 ## Project Structure
 
@@ -100,7 +141,7 @@ lib/
 ## Design Decisions
 
 1. **Clean Architecture**: This architecture was chosen to ensure scalability and separation of concerns. It allows for easy maintenance and adding new features without affecting other layers.
-2. **Bloc State Management**: Bloc was selected to manage state effectively and facilitate testing and debugging. It provides clear separation of business logic from the UI.
+2. **Bloc State Management**: Bloc was selected to manage the state effectively and facilitate testing and debugging. It provides a clear separation of business logic from the UI.
 
 ## State Management (Bloc)
 
@@ -112,7 +153,7 @@ Each feature in the app has its own Bloc that handles events, states, and the as
 - **ProductBloc** manages product fetching and filtering.
 - **CartBloc** handles adding/removing items from the cart and checking out.
 
-### Example:
+### For Instance:
 
 ```dart
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
@@ -142,7 +183,7 @@ Firebase Authentication is used for user registration, login, and managing user 
 
 ### Firestore
 
-Firestore is used to store all product data and user details. It is structured in a way to allow real-time data fetching for product listings, user orders, and cart data.
+Firestore is used to store all product data and user details. It is structured in a way to allows real-time data fetching for product listings, user orders, and cart data.
 
 ### Storage
 
@@ -201,6 +242,8 @@ Future<List<Product>> getAllProducts() async {
 1. **Real-Time Data Updates**: The app uses Firestore's real-time update features to display live product updates.
 2. **Advanced Animations**: Custom animations have been added for product listing and cart transitions.
 3. **Responsive Design**: The app is responsive and works across various screen sizes, including tablets and mobile phones.
+
+
 
 ## Conclusion
 
