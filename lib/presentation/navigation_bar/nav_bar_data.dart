@@ -26,7 +26,7 @@ class NavBarData {
       selectedIcon: AppVectors.heartR,
     ),
     NavBarData(
-      screen: const CartPage(),
+      screen: const CartPage(isTrue: true),
       icon: AppVectors.cart,
       selectedIcon: AppVectors.cartY,
     ),

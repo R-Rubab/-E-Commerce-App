@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_app/core/configs/theme/extension.dart';
 import 'package:ecommerce_app/domain/product/entities/product.dart';
 import 'package:ecommerce_app/presentation/product_detail/bloc/product_quantity_cubit.dart';
 import 'package:flutter/material.dart';
@@ -41,18 +42,18 @@ class ProductQuantity extends StatelessWidget {
                       child: Icon(
                         Icons.remove,
                         size: 30,
+                        color: EColors.black,
                       ),
                     ),
                   )),
-              SizedBox(width: 10.w),
+              10.w.pw,
               BlocBuilder<ProductQuantityCubit, int>(
                 builder: (context, state) => Text(
                   state.toString(),
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ),
-              SizedBox(width: 10.w),
+              10.w.pw,
               IconButton(
                   onPressed: () {
                     context.read<ProductQuantityCubit>().increment();
@@ -65,6 +66,7 @@ class ProductQuantity extends StatelessWidget {
                     child: const Center(
                       child: Icon(
                         Icons.add,
+                        color: EColors.black,
                         size: 30,
                       ),
                     ),

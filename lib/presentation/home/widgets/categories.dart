@@ -40,8 +40,7 @@ class Categories extends StatelessWidget {
 
   Widget _seaAll(BuildContext context) {
     return Padding(
-      padding:  16.w.hp,
-      
+      padding: 16.w.hp,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -55,10 +54,7 @@ class Categories extends StatelessWidget {
             },
             child: Text(
               'See All',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 18.sp,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
           )
         ],
@@ -91,8 +87,7 @@ class Categories extends StatelessWidget {
                 10.h.ph,
                 Text(
                   categories[index].title,
-                  style:
-                      TextStyle(fontWeight: FontWeight.w400, fontSize: 14.sp),
+                  style: Theme.of(context).textTheme.bodySmall,
                 )
               ],
             );

@@ -83,7 +83,7 @@ class Header extends StatelessWidget {
   Widget _card(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        AppNavigator.push(context, const CartPage());
+        AppNavigator.push(context, const CartPage(isTrue: false));
       },
       child: Container(
         height: 45.h,

@@ -3,6 +3,7 @@ import 'package:ecommerce_app/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_app/core/configs/assets/app_images.dart';
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_app/core/configs/theme/extension.dart';
+import 'package:ecommerce_app/presentation/home/pages/home.dart';
 import 'package:ecommerce_app/presentation/navigation_bar/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +25,7 @@ class OrderPlacedPage extends StatelessWidget {
                 height: 300.h,
                 width: 400.w,
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
+                  shape: BoxShape.circle,
                     color: EColors.trans,
                     border: Border.all(
                       width: 10,
@@ -56,14 +57,16 @@ class OrderPlacedPage extends StatelessWidget {
                 children: [
                   Text(
                     'Order Placed Successfully',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
+                    style:Theme.of(context)
+                      .textTheme
+                      .bodyMedium,),
+                      
+                
                   30.h.ph,
                   BasicAppButton(
                       title: 'Finish',
                       onPressed: () {
-                        AppNavigator.pushAndRemove(
-                            context, const NavigationPage());
+                        AppNavigator.pushAndRemove(context,  const NavigationPage());
                       })
                 ],
               ),

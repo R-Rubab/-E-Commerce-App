@@ -14,7 +14,8 @@ import '../widgets/checkout.dart';
 import '../widgets/product_ordered_card.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+  final bool isTrue;
+  const CartPage({super.key, this.isTrue = false});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class CartPage extends StatelessWidget {
                       children: [
                         _products(state.products),
                         Positioned(
-                            bottom: 100.h,
+                            bottom: isTrue == true ? 100.h : 0.h,
                             left: 0,
                             right: 0,
                             child: Checkout(

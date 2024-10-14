@@ -73,6 +73,7 @@ flutter:
     - assets/fonts/
     - assets/vectors/
     - assets/images/
+    
 
   fonts:
     - family: CircularStd

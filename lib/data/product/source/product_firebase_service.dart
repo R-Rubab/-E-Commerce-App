@@ -23,7 +23,7 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
     try {
       var returnedData = await FirebaseFirestore.instance
           .collection('Products')
-          // .where('salesNumber', isGreaterThanOrEqualTo: 20)
+          .where('salesNumber', isGreaterThanOrEqualTo: 20)
           .get();
       // log('ProductFirebaseSErvice : $returnedData \n result ProductFirebaseSErvice: ${Right(returnedData.docs.map((e) => e.data()).toList())}');
       return Right(returnedData.docs.map((e) => e.data()).toList());
@@ -38,7 +38,7 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
     try {
       var returnedData = await FirebaseFirestore.instance
           .collection('Products')
-          // .where('createdDate', isGreaterThanOrEqualTo: DateTime(2024, 07, 25))
+          .where('createdDate', isGreaterThanOrEqualTo: DateTime(2024, 07, 25))
           .get();
       return Right(returnedData.docs.map((e) => e.data()).toList());
     } catch (e) {
@@ -51,7 +51,7 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
     try {
       var returnedData = await FirebaseFirestore.instance
           .collection('Products')
-          // .where('categoryId', isEqualTo: categoryId)
+          .where('categoryId', isEqualTo: categoryId)
           .get();
       return Right(returnedData.docs.map((e) => e.data()).toList());
     } catch (e) {
@@ -64,10 +64,10 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
     try {
       var returnedData = await FirebaseFirestore.instance
           .collection('Products')
-          // .where(
-          //   'title',
-          //   isGreaterThanOrEqualTo: title,
-          // )
+          .where(
+            'title',
+            isGreaterThanOrEqualTo: title,
+          )
           .get();
       return Right(returnedData.docs.map((e) => e.data()).toList());
     } catch (e) {
@@ -83,7 +83,7 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
           .collection("Users")
           .doc(user!.uid)
           .collection('Favorites')
-          // .where('productId', isEqualTo: product.productId)
+          .where('productId', isEqualTo: product.productId)
           .get();
 
       if (products.docs.isNotEmpty) {
@@ -110,7 +110,7 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
           .collection("Users")
           .doc(user!.uid)
           .collection('Favorites')
-          // .where('productId', isEqualTo: productId)
+          .where('productId', isEqualTo: productId)
           .get();
 
       if (products.docs.isNotEmpty) {
