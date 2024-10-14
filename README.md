@@ -40,26 +40,36 @@ Below is the UI implementation for E-Commerce:
 <table>
     <tbody>
         <tr>
-			<th>E-Commerce Application Using Flutter</th>	
-		</tr>
+            <th colspan="4" align="center">E-Commerce Application Using Flutter</th>
+        </tr>
         <tr>
-			<td>
-				<img width="280" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/1.png">
-				<img width="280" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/2.png">
-				<img width="280" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/3.png">
-				<img width="230" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/4.png">
-				<img width="230" height='500' alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/screenshots/5.png">
-			</td>
-		</tr>
+            <td><img width="300" height="440" alt="img1" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/1.png"></td>
+            <td><img width="300" height="440" alt="img2" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/2.png"></td>
+            <td><img width="300" height="440" alt="img3" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/3.png"></td>
+            <td><img width="300" height="440" alt="img33" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/3.1.png"></td>
+        </tr>
         <tr>
-			<td align="center">
-				<a href="https://github.com/R-Rubab/-E-Commerce-App">
-					<img src="https://github-readme-stats.vercel.app/api/pin/?username=R-Rubab&repo=-E-Commerce-App&theme=dracula" alt="Storage" />
-				</a>
-			</td>
-		</tr>
+            <td><img width="300" height="440" alt="img4" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/4.png"></td>
+            <td><img width="300" height="440" alt="img5" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/5.png"></td>
+            <td><img width="300" height="440" alt="img6" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/6.png"></td>
+            <td><img width="300" height="440" alt="img7" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/7.png"></td>
+        </tr>
+        <tr>
+            <td><img width="300" height="440" alt="img8" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/8.png"></td>
+            <td><img width="300" height="440" alt="img9" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/9.png"></td>
+            <td><img width="300" height="440" alt="img10" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/10.png"></td>
+            <td><img width="300" height="440" alt="img11" src="https://github.com/R-Rubab/-E-Commerce-App/blob/main/UI%20IMAGES/11.png"></td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">
+                <a href="https://github.com/R-Rubab/-E-Commerce-App">
+                    <img src="https://github-readme-stats.vercel.app/api/pin/?username=R-Rubab&repo=-E-Commerce-App&theme=dracula" alt="Storage" />
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>
+
 
 ## Packaged
 ```
